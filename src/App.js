@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { CssBaseline, Container, Typography, Button, AppBar, Toolbar, Box } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#ff4081',
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            My Netlify Page
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Container maxWidth="md" style={{ marginTop: '2rem' }}>
+        <Typography variant="h4" gutterBottom>
+          Welcome to My Netlify Page!
+        </Typography>
+        <Typography variant="body1" paragraph>
+          This is a simple example of a webpage built with React and Material-UI.
+        </Typography>
+        <Box textAlign="center" mt={4}>
+          <Button variant="contained" color="primary">
+            Learn More
+          </Button>
+        </Box>
+      </Container>
+    </ThemeProvider>
   );
 }
 
