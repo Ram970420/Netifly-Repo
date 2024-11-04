@@ -1,9 +1,9 @@
 // App.js
 import React from 'react';
-import Header from 'components/Header';
-import Hero from 'components/Hero';
-import Features from 'components/Features';
-import Footer from 'components/Footer';
+import Header from './Header';
+import Hero from './Hero';
+import Features from './Features';
+import Footer from './Footer';
 
 const App = () => (
   <>
